@@ -1,0 +1,31 @@
+# Function to calculate average score
+def calculate_average(scores):
+    total = sum(scores)
+    average = total / len(scores)
+    return average
+
+# Function to determine pass or fail
+def determine_pass_or_fail(average, passing_threshold):
+    if average >= passing_threshold:
+        return "Pass"
+    else:
+        return "Fail"
+
+# Main program
+def main():
+    students = [
+        {"name": "Ummussalma", "scores": [80, 90, 70]},
+        {"name": "Hamisu", "scores": [95, 85, 90]},
+        {"name": "Shuaibu", "scores": [60, 70, 75]}
+    ]
+    passing_threshold = 70
+
+    for student in students:
+        name = student["name"]
+        scores = student["scores"]
+        average = calculate_average(scores)
+        result = determine_pass_or_fail(average, passing_threshold)
+        print(f"{name}: Average score = {average}, Result = {result}")
+
+if __name__ == "__main__":
+    main()
